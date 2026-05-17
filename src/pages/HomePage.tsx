@@ -13,15 +13,20 @@ import Jest from "../assets/jest.svg";
 import Cypress from "../assets/cypress.svg";
 import Docker from "../assets/docker.png";
 import Apache from "../assets/apache.png";
+import MySQL from "../assets/mysql.png";
+import Tailwind from "../assets/tailwind.png";
+import Badge from "../components/Badge";
+import SmallCard from "../components/SmallCard";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
     <main>
       <section className="flex items-center justify-evenly text-center">
-        <div className="container w-6xl flex flex-col justify-center items-center">
+        <div className="container w-full flex flex-col justify-center items-center">
           <img
             src={Kyran}
-            className="w-50 aspect-square object-cover rounded-full mb-4 mt-8 border-4 border-black"
+            className="w-48 aspect-square object-cover rounded-full mb-4 mt-10 border-4 border-black"
           />
           <div className="w-full text-center my-4">
             <h1 className="text-5xl md:text-6xl font-black tracking-tight text-gray-900 mb-6">
@@ -36,172 +41,104 @@ function HomePage() {
               . I build robust web applications where quality and scalability
               aren't afterthoughts.
             </p>
+
+            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to="/experience"
+                className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-sm transition active:scale-[0.98] text-center"
+              >
+                View My Experience
+              </Link>
+              <Link
+                to="/contact"
+                className="w-full sm:w-auto bg-white border border-gray-200 text-gray-700 hover:border-amber-500 hover:text-amber-700 font-bold text-sm px-8 py-3.5 rounded-xl shadow-sm transition active:scale-[0.98] text-center"
+              >
+                Contact Me
+              </Link>
+            </div>
           </div>
 
           <section className="py-4">
             <div className="max-w-5xl mx-auto px-4">
               <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-6">
-                How I Work
+                How I Work:
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Card 1: QA/Testing */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                  <div className="text-amber-500 text-3xl mb-4">🧪</div>
-                  <h3 className="text-xl font-bold mb-2">QA-Engineered Core</h3>
-                  <p className="text-gray-600 text-sm">
-                    I have a year of experience working as a quality assurance
+                <SmallCard
+                  icon="🧪"
+                  title="QA-Engineered Core"
+                  description="I have a year of experience working as a quality assurance
                     engineer which has instilled a test driven mindset into me.
                     Quality, predictability and reliability are the core values
-                    that guide my work.
-                  </p>
-                </div>
+                    that guide my work."
+                />
 
                 {/* Card 2: Tech Stack Versatility */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                  <div className="text-amber-500 text-3xl mb-4">🗄️</div>
-                  <h3 className="text-xl font-bold mb-2">
-                    Full-Stack Capability
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Seamlessly bridging frontend reactivity with secure backend
+                <SmallCard
+                  icon="🗄️"
+                  title="Full-Stack Capability"
+                  description="Seamlessly bridging frontend reactivity with secure backend
                     architecture. Experienced in React, Node, PHP, and
-                    relational database design.
-                  </p>
-                </div>
+                    relational database design."
+                />
 
                 {/* Card 3: Academic Background */}
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                  <div className="text-amber-500 text-3xl mb-4">🎓</div>
-                  <h3 className="text-xl font-bold mb-2">
-                    First-Class Foundation
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Computer Science graduate from the University of Sheffield
+                <SmallCard
+                  icon="🎓"
+                  title="First-Class Foundation"
+                  description="Computer Science graduate from the University of Sheffield
                     with First-Class Honours. Strong understanding of
-                    fundamentals applied to real-world products.
-                  </p>
-                </div>
+                    fundamentals applied to real-world products."
+                />
               </div>
             </div>
           </section>
 
-          <h2 className="text-2xl mb-2 font-semibold">Frontend Development:</h2>
-          <div className="container flex flex-wrap justify-center">
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img
-                src={TypeScript}
-                className="w-10 h-10 object-contain mr-4"
-                alt="TS"
-              />
-              <h3 className="text-xl font-bold text-gray-800">TypeScript</h3>
-            </div>
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img
-                src={JavaScript}
-                className="w-10 h-10 aspect-square object-cover mr-auto"
-                alt="JS"
-              />
-              <h2 className="text-2xl">JavaScript</h2>
-            </div>
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-              <img
-                src={React}
-                className=" h-10 object-cover mr-auto"
-                alt="React"
-              />
-              <h2 className="text-2xl">React</h2>
-            </div>
-          </div>
+          <section className="py-4 mb-4">
+            <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-6">
+              Tech Stack:
+            </h2>
 
-          <h2 className="text-2xl mb-2 font-semibold">Backend Development:</h2>
-          <div className="container flex flex-wrap justify-center">
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img src={PHP} className="w-20 object-cover mr-auto" />
-              <h2 className="text-2xl">PHP</h2>
+            <h2 className="text-2xl mb-2 font-semibold">
+              Frontend Development:
+            </h2>
+            <div className="container flex flex-wrap justify-center mt-4 mb-4">
+              <Badge name="TypeScript" image={TypeScript} />
+              <Badge name="JavaScript" image={JavaScript} />
+              <Badge name="React" image={React} width={15} />
+              <Badge name="Tailwind" image={Tailwind} width={15} />
             </div>
 
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img src={Apache} className=" h-10 object-cover mr-auto" />
-              <h2 className="text-2xl">Apache</h2>
+            <h2 className="text-2xl mb-2 font-semibold">
+              Backend Development:
+            </h2>
+            <div className="container flex flex-wrap justify-center mt-4 mb-4">
+              <Badge name="PHP" image={PHP} width={20} />
+              <Badge name="Apache" image={Apache} width={5} height={10} />
+              <Badge name="Node" image={Node} width={15} height={10} />
+              <Badge name="MySQL" image={MySQL} />
             </div>
 
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img src={Node} className="h-10 object-cover mr-auto" />
-              <h2 className="text-2xl">Node</h2>
+            <h2 className="text-2xl mb-2 font-semibold">
+              Testing Automation (QA):
+            </h2>
+            <div className="container flex flex-wrap justify-center mt-4 mb-4">
+              <Badge name="Jest" image={Jest} />
+              <Badge name="Cypress" image={Cypress} />
+              <Badge name="Postman" image={Postman} />
             </div>
-          </div>
 
-          <h2 className="text-2xl mb-2 font-semibold">
-            Testing Automation (QA):
-          </h2>
-          <div className="flex flex-wrap justify-center">
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img src={Jest} className="w-10 object-cover mr-auto" />
-              <h2 className="text-2xl">Jest</h2>
+            <h2 className="text-2xl mb-2 font-semibold">
+              Development Workflow and DevOps:
+            </h2>
+            <div className="container flex flex-wrap justify-center mt-4 mb-4">
+              <Badge name="Linux (Ubuntu)" image={Ubuntu} />
+              <Badge name="Git" image={Git} />
+              <Badge name="Docker" image={Docker} />
             </div>
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img src={Cypress} className="w-10 object-cover mr-auto" />
-              <h2 className="text-2xl">Cypress</h2>
-            </div>
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img src={Postman} className="w-10 object-cover mr-auto" />
-              <h2 className="text-2xl">Postman</h2>
-            </div>
-          </div>
-
-          <h2 className="text-2xl mb-2 font-semibold">
-            Development Workflow and DevOps:
-          </h2>
-          <div className="container flex flex-wrap justify-center">
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img src={Ubuntu} className="w-10 object-cover mr-auto" />
-              <h2 className="text-2xl">Linux (Ubuntu)</h2>
-            </div>
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img src={Git} className="w-10 object-cover mr-auto" />
-              <h2 className="text-2xl">Git</h2>
-            </div>
-            <div className="flex items-center w-72 bg-amber-50 hover:bg-amber-100 border-2 border-amber-300 p-4 rounded-xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md mr-4">
-              <img src={Docker} className="w-10 object-cover mr-auto" />
-              <h2 className="text-2xl">Docker</h2>
-            </div>
-          </div>
-          {/* <h2 className="text-2xl mb-4">
-            I have a year of experience working as a quality assurance engineer
-            which has instilled a test driven mindset into me. Quality,
-            predictability and reliability are the core values that guide my
-            work.
-          </h2>
-          <h2 className="text-2xl">
-            I'm a Graduate of Computer Science from the University of Sheffield
-            acheiving a First-Class Honours
-          </h2> */}
-        </div>
-      </section>
-      <section className="py-16 text-center">
-        <div className="max-w-xl mx-auto px-4">
-          <h2 className="text-3xl font-extrabold mb-4">
-            Let's build something reliable together.
-          </h2>
-          <p className="text-gray-600 mb-6">
-            I'm currently open to full-stack engineering roles and project
-            collaborations.
-          </p>
-          <div className="flex justify-center gap-4">
-            <a
-              href="#contact"
-              className="bg-gray-900 text-white font-bold px-6 py-3 rounded-xl hover:bg-gray-800 transition shadow-sm"
-            >
-              Get In Touch
-            </a>
-            <a
-              href="#portfolio"
-              className="bg-amber-200 text-gray-900 font-bold px-6 py-3 rounded-xl hover:bg-amber-300 transition shadow-sm"
-            >
-              My Portfolio
-            </a>
-          </div>
+          </section>
         </div>
       </section>
     </main>
