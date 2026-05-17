@@ -47,7 +47,7 @@ function BlogPage() {
           ))}
         </div>
       ) : (
-        <div className="text-center py-12 bg-white border border-gray-200 rounded-2xl p-6">
+        <div className="text-center py-12 bg-white p-6">
           <p className="text-gray-500">
             No posts published under this category yet.
           </p>

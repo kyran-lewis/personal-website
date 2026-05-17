@@ -54,7 +54,7 @@ function ViewBlogPostPage() {
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-gray-900 mb-4 leading-tight">
           {post.title}
         </h1>
-        <div className="flex items-center justify-center gap-2 text-xs font-semibold text-gray-400">
+        <div className="flex items-center justify-center gap-2 text-md font-semibold text-gray-400">
           <span>{post.date}</span>
         </div>
       </header>
@@ -64,22 +64,32 @@ function ViewBlogPostPage() {
           <ReactMarkdown
             children={post.content}
             components={{
-              // 🛠️ Map raw HTML tags straight to your Tailwind styles!
-              h3: ({ ...props }) => (
-                <h3 className="text-2xl font-bold" {...props} />
+              h3: ({ children }) => (
+                <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+                  {children}
+                </h3>
               ),
-              p: ({ ...props }) => <p {...props} />,
+
+              h4: ({ children }) => (
+                <h4 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
+                  {children}
+                </h4>
+              ),
+              li: ({ children }) => (
+                <li className="marker:text-amber-600 list-disc ml-6">
+                  {children}
+                </li>
+              ),
+              a: ({ children, href }) => (
+                <a
+                  href={href}
+                  className="text-amber-600 hover:text-amber-700 transition"
+                >
+                  {children}
+                </a>
+              ),
             }}
           />
-          {/* {post.content.map((item, index) =>
-            item.type === "header" ? (
-              <h3 className="text-2xl font-bold" key={index}>
-                {item.body}
-              </h3>
-            ) : (
-              <p key={index}>{item.body}</p>
-            ),
-          )} */}
         </div>
       </article>
     </main>
