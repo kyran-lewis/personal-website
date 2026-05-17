@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import Kyran from "../assets/kyran.jpeg";
 import TypeScript from "../assets/typescript.png";
 import JavaScript from "../assets/javascript.jpg";
 import React from "../assets/react.svg";
@@ -18,46 +17,14 @@ import Tailwind from "../assets/tailwind.png";
 import Badge from "../components/Badge";
 import SmallCard from "../components/SmallCard";
 import { Link } from "react-router-dom";
+import Hero from "../components/Hero";
 
 function HomePage() {
   return (
     <main>
       <section className="flex items-center justify-evenly text-center">
         <div className="container w-full flex flex-col justify-center items-center">
-          <img
-            src={Kyran}
-            className="w-48 aspect-square object-cover rounded-full mb-4 mt-10 border-4 border-black"
-          />
-          <div className="w-full text-center my-4">
-            <h1 className="text-5xl md:text-6xl font-black tracking-tight text-gray-900 mb-6">
-              Hi, I'm Kyran!
-            </h1>
-            <p className="w-3xl text-xl md:text-2xl text-gray-600 leading-relaxed mx-auto">
-              A Full-Stack Developer with 3.5 years of industry experience and a
-              <span className="font-semibold text-gray-900">
-                {" "}
-                test driven mindset
-              </span>
-              . I build robust web applications where quality and scalability
-              aren't afterthoughts.
-            </p>
-
-            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/experience"
-                className="w-full sm:w-auto bg-gray-900 hover:bg-gray-800 text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-sm transition active:scale-[0.98] text-center"
-              >
-                View My Experience
-              </Link>
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto bg-white border border-gray-200 text-gray-700 hover:border-amber-500 hover:text-amber-700 font-bold text-sm px-8 py-3.5 rounded-xl shadow-sm transition active:scale-[0.98] text-center"
-              >
-                Contact Me
-              </Link>
-            </div>
-          </div>
-
+          <Hero />
           <section className="py-4">
             <div className="max-w-5xl mx-auto px-4">
               <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-6">

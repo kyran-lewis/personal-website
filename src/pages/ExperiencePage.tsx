@@ -280,24 +280,24 @@ function ExperiencePage() {
                 </div>
 
                 <p className="text-sm text-gray-600 leading-relaxed">
-                  An optimization push configured around performance thresholds
-                  and back-end container availability:
+                  The work carried out in this release of DFH brought a host of
+                  benefits such as:
                 </p>
 
                 <ul className="list-disc list-inside text-sm text-gray-600 space-y-2 pl-1 leading-relaxed">
                   <li>
-                    <strong>Load Balancing:</strong> Adjusted capacity layouts
-                    to balance request surges during shifts without dropping
-                    concurrent sockets.
+                    <strong>Capacity improvements</strong>
                   </li>
                   <li>
-                    <strong>Security Audits:</strong> Hardened firewall scripts
-                    and updated data container connection policies.
+                    <strong>Increased system resilience</strong>
                   </li>
                   <li>
-                    <strong>Downtime Containment:</strong> Streamlined active
-                    microservice updates to significantly lower deployment
-                    window wait times.
+                    <strong>Enhanced security</strong>
+                  </li>
+                  <li>
+                    <strong>
+                      Reduced downtime for future maintenance windows
+                    </strong>
                   </li>
                 </ul>
 
