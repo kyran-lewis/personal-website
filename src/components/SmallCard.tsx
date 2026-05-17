@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
-
 interface Props {
   icon: string;
   title: string;

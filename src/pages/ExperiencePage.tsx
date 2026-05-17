@@ -7,8 +7,8 @@ import DFHDocsAndVideos from "../assets/dfh-docs-videos.png";
 
 function ExperiencePage() {
   return (
-    <main className="w-full min-h-screen bg-slate-50 py-16">
-      <div className="max-w-4xl mx-auto px-4">
+    <main className="w-full min-h-screen py-16">
+      <div className="max-w-4xl mx-auto px-6">
         {/* Page Title - Clean, solid minimalist style */}
         <h1 className="text-4xl font-black text-gray-900 mb-12 text-center tracking-tight">
           Experience and Qualifications

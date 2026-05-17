@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import { BLOG_POSTS, type BlogPostData } from "../BLOG_POSTS";
+import { PARSED_BLOG_POSTS } from "../BLOG_POSTS";
+import ReactMarkdown from "react-markdown";
 
 // interface Props {
 //   post: BlogPostData;
@@ -8,7 +9,7 @@ import { BLOG_POSTS, type BlogPostData } from "../BLOG_POSTS";
 function ViewBlogPostPage() {
   const { id } = useParams<{ id: string }>();
 
-  const post = id ? BLOG_POSTS[Number(id) - 1] : null;
+  const post = id ? PARSED_BLOG_POSTS[Number(id) - 1] : null;
 
   // Fallback UI state if the reader inputs an invalid URL path
   if (!post) {
@@ -32,9 +33,7 @@ function ViewBlogPostPage() {
   }
 
   return (
-    /* Global layout wrap matching full page constraints */
     <main className="max-w-4xl mx-auto px-4 py-12 md:py-16">
-      {/* 1. BACK BUTTON BUTTON LINK */}
       <div className="mb-8">
         <Link
           to="/blog"
@@ -60,30 +59,29 @@ function ViewBlogPostPage() {
         </div>
       </header>
 
-      {/* 3. THE ARTICLE CANVAS CARD */}
       <article className="bg-white border border-gray-200 rounded-3xl p-6 md:p-12 shadow-sm">
-        {/* 4. DYNAMIC MULTI-PARAGRAPH CONTENT STREAM */}
-        {/* 'space-y-6' applies perfectly measured structural spacing between content chunks */}
         <div className="space-y-6 text-gray-700 text-base md:text-lg leading-relaxed font-normal">
-          {post.content.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+          <ReactMarkdown
+            children={post.content}
+            components={{
+              // 🛠️ Map raw HTML tags straight to your Tailwind styles!
+              h3: ({ ...props }) => (
+                <h3 className="text-2xl font-bold" {...props} />
+              ),
+              p: ({ ...props }) => <p {...props} />,
+            }}
+          />
+          {/* {post.content.map((item, index) =>
+            item.type === "header" ? (
+              <h3 className="text-2xl font-bold" key={index}>
+                {item.body}
+              </h3>
+            ) : (
+              <p key={index}>{item.body}</p>
+            ),
+          )} */}
         </div>
       </article>
-
-      {/* 5. MINIMAL FOOTER CALLOUT */}
-      <footer className="mt-12 pt-8 border-t border-gray-100 text-center">
-        <p className="text-sm text-gray-500">
-          Enjoyed reading? Check out my other articles or view my{" "}
-          <Link
-            to="/experience"
-            className="text-amber-600 hover:underline font-semibold"
-          >
-            Technical Experience
-          </Link>
-          .
-        </p>
-      </footer>
     </main>
   );
 }

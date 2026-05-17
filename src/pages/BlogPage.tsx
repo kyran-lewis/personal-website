@@ -1,20 +1,29 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { BLOG_POSTS } from "../BLOG_POSTS";
-import BlogPost from "../components/BlogPost";
+import { PARSED_BLOG_POSTS } from "../BLOG_POSTS";
+import BlogPostCard from "../components/BlogPostCard";
 import CategoryFilter from "../components/CategoryFilter";
-
 function BlogPage() {
   const [activeFilter, setActiveFilter] = useState("All");
 
+  // const parsedBlogPosts = BLOG_POSTS_NEW.map((rawPost) => {
+  //   const { attributes, body } = fm<BlogPostData>(rawPost);
+  //   return {
+  //     title: attributes.title,
+  //     date: attributes.date,
+  //     summary: attributes.summary,
+  //     category: attributes.category,
+  //     id: attributes.id,
+  //     content: body,
+  //   };
+  // });
+
   // Filter posts based on click state
-  const filteredPosts = BLOG_POSTS.filter((post) =>
+  const filteredPosts = PARSED_BLOG_POSTS.filter((post) =>
     activeFilter === "All" ? true : post.category === activeFilter,
   );
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-      {/* --- SECTION 1: HEADER SECTION --- */}
+    <main className="max-w-6xl mx-auto px-6 py-12 md:py-16">
       <header className="text-center max-w-3xl mx-auto mb-12">
         <h1 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 mb-4">
           Blog
@@ -32,10 +41,9 @@ function BlogPage() {
       />
 
       {filteredPosts.length > 0 ? (
-        /* Reusing your h-full flexible layout configuration so buttons align neatly at the bottom */
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredPosts.map((post) => (
-            <BlogPost post={post} />
+            <BlogPostCard post={post} />
           ))}
         </div>
       ) : (

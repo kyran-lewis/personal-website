@@ -7,13 +7,13 @@ function Hero() {
     <>
       <img
         src={Kyran}
-        className="w-48 aspect-square object-cover rounded-full mb-4 mt-10 border-4 border-black"
+        className="w-48 aspect-square object-cover rounded-full mt-10 border-4 border-black"
       />
       <div className="w-full text-center my-4">
         <h1 className="text-5xl md:text-6xl font-black tracking-tight text-gray-900 mb-6">
           Hi, I'm Kyran!
         </h1>
-        <p className="w-3xl text-xl md:text-2xl text-gray-600 leading-relaxed mx-auto">
+        <p className="max-w-3xl text-xl md:text-2xl text-gray-600 leading-relaxed mx-auto">
           A Full-Stack Developer with 3.5 years of industry experience and a
           <span className="font-semibold text-gray-900">
             {" "}
