@@ -32,7 +32,7 @@ function Hero() {
           </Link>
           <Link
             to="/contact"
-            className="w-full sm:w-auto bg-white border border-gray-200 text-gray-700 hover:border-amber-500 hover:text-amber-700 font-bold text-sm px-8 py-3.5 rounded-xl shadow-sm transition active:scale-[0.98] text-center"
+            className="w-full sm:w-auto bg-amber-50 border border-amber-100 text-gray-700 hover:border-amber-500 hover:text-amber-700 font-bold text-sm px-8 py-3.5 rounded-xl shadow-sm transition active:scale-[0.98] text-center"
           >
             Contact Me
           </Link>
