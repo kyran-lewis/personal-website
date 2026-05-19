@@ -7,6 +7,7 @@ import DFHDocsAndVideos from "../assets/dfh-docs-videos.png";
 import Logo from "../components/Logo";
 import Spotlight from "../components/Spotlight";
 import SubSection from "../components/SubSection";
+import TimelineEntry from "../components/TimelineEntry";
 
 function ExperiencePage() {
   return (
@@ -101,38 +102,27 @@ function ExperiencePage() {
                   (formerly 3Squared)
                 </span>
               </h2>
-              {/* Clean text-amber-600 label */}
               <p className="text-amber-600 font-semibold mt-1 flex items-center gap-1">
                 <span>🛠️</span> Quality Assurance & Engineering
               </p>
             </div>
 
             {/* Core Project Summary Block */}
-            <div className="mb-8 bg-slate-50 p-5 rounded-xl border border-gray-100">
-              <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2 mb-2">
-                <span>📦</span> Project Context: Docs, Forms, Hub (DFH)
-              </h3>
+            <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
+              <span>🚀</span> Core Projects & Achievements
+            </h3>
+
+            <div className="space-y-12 border-l-2 border-amber-200 pl-4 md:pl-6 ml-2">
+              <h4 className="text-xl font-black text-gray-900 mb-2">
+                Docs, Forms, Hub (DFH)
+              </h4>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Contributed to high-availability corporate core platforms.
                 Managed rigorous functional layout diagnostics, accessibility
                 reviews, network telemetry evaluations, and infrastructure loads
                 to guarantee system operation under peak application strain.
               </p>
-            </div>
-
-            <div className="space-y-12 border-l-2 border-amber-200 pl-4 md:pl-6 ml-2">
-              <div className="relative space-y-4">
-                <div className="absolute w-3 h-3 bg-amber-400 rounded-full -left-[23px] md:-left-[31px] top-1.5 border border-white" />
-
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <h4 className="text-xl font-black text-gray-900">
-                    Release v2.17.0
-                  </h4>
-                  <span className="self-start sm:self-auto text-xs font-bold bg-gray-100 text-gray-600 px-2.5 py-1 rounded-md border border-gray-200">
-                    UI Update
-                  </span>
-                </div>
-
+              <TimelineEntry number="2.17.0" category="UI Update">
                 <p className="text-sm text-gray-600 leading-relaxed">
                   This deployment focused heavily on visual analytic
                   modernizations, turning rigid telemetry grids into dynamic
@@ -157,7 +147,6 @@ function ExperiencePage() {
                   </li>
                 </ul>
 
-                {/* Integrated One Per Line Full-Width Visual Assets */}
                 <div className="space-y-6 mt-6">
                   <div className="bg-gray-100 border border-gray-300 rounded-xl shadow-inner overflow-hidden">
                     <img
@@ -176,7 +165,6 @@ function ExperiencePage() {
                 </div>
 
                 <div className="pt-2">
-                  {/* Native Tailwind amber interaction classes */}
                   <a
                     href="https://support.velociti-solutions.com/hc/en-us/articles/4907359904786-Docs-Forms-Hub-v2-17-0-24-May-2022"
                     target="_blank"
@@ -189,21 +177,9 @@ function ExperiencePage() {
                     </span>
                   </a>
                 </div>
-              </div>
+              </TimelineEntry>
 
-              {/* Extended Release v2.14.0 Block */}
-              <div className="relative space-y-4">
-                <div className="absolute w-3 h-3 bg-amber-400 rounded-full -left-[23px] md:-left-[31px] top-1.5 border border-white" />
-
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                  <h4 className="text-xl font-black text-gray-900">
-                    Release v2.14.0
-                  </h4>
-                  <span className="self-start sm:self-auto text-xs font-bold bg-slate-900 text-white px-2.5 py-1 rounded-md">
-                    Infrastructure
-                  </span>
-                </div>
-
+              <TimelineEntry number="2.14.0" category="Infrastructure">
                 <p className="text-sm text-gray-600 leading-relaxed">
                   The work carried out in this release of DFH brought a host of
                   benefits such as:
@@ -227,7 +203,6 @@ function ExperiencePage() {
                 </ul>
 
                 <div className="pt-2">
-                  {/* Native Tailwind amber interaction classes */}
                   <a
                     href="https://support.velociti-solutions.com/hc/en-us/articles/4526633124626-DFH-v2-14-0-Infrastructure-Maintenance-05-Mar-2022"
                     target="_blank"
@@ -240,13 +215,10 @@ function ExperiencePage() {
                     </span>
                   </a>
                 </div>
-              </div>
+              </TimelineEntry>
             </div>
           </section>
 
-          {/* ========================================== */}
-          {/* EDUCATION SECTION */}
-          {/* ========================================== */}
           <section className="bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm transition hover:shadow-md relative">
             <Logo image={UoS} alt="University of Sheffield Logo" />
 

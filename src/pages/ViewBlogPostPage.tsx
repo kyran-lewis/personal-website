@@ -48,7 +48,7 @@ function ViewBlogPostPage() {
 
       {/* 2. POST HEADER LAYOUT METADATA */}
       <header className="text-center max-w-3xl mx-auto mb-10">
-        <span className="bg-amber-50 text-amber-700 border border-amber-100 text-xs font-semibold px-3 py-1 rounded-md inline-block mb-4">
+        <span className="bg-amber-500 text-white border border-amber-100 text-xs font-semibold px-3 py-1 rounded-md inline-block mb-4">
           {post.category}
         </span>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-gray-900 mb-4 leading-tight">

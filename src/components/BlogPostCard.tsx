@@ -12,11 +12,11 @@ function BlogPost({ post }: Props) {
   return (
     <article
       key={post.id}
-      className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-md flex flex-col h-full group"
+      className="bg-amber-50 border border-amber-100 hover:border-amber-500 p-6 rounded-2xl shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-md flex flex-col h-full group"
     >
       {/* Meta information container */}
       <div className="flex items-center justify-between text-xs font-semibold text-gray-400 mb-3">
-        <span className="bg-amber-50 text-amber-700 border border-amber-100 px-2.5 py-1 rounded-md">
+        <span className="bg-amber-500 text-white border border-amber-100 px-2.5 py-1 rounded-xl">
           {post.category}
         </span>
         <div className="flex gap-2">
