@@ -9,7 +9,11 @@ import ReactMarkdown from "react-markdown";
 function ViewBlogPostPage() {
   const { id } = useParams<{ id: string }>();
 
-  const post = id ? PARSED_BLOG_POSTS[Number(id) - 1] : null;
+  const getBlogPostByID = (id: string) => {
+    return PARSED_BLOG_POSTS.find((post) => post.id === id);
+  };
+
+  const post = id ? getBlogPostByID(id) : null;
 
   // Fallback UI state if the reader inputs an invalid URL path
   if (!post) {

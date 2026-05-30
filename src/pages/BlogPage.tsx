@@ -22,6 +22,8 @@ function BlogPage() {
     activeFilter === "All" ? true : post.category === activeFilter,
   );
 
+  console.log(filteredPosts);
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-12 md:py-16">
       <header className="text-center max-w-3xl mx-auto mb-12">
