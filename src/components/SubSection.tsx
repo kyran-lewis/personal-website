@@ -5,10 +5,10 @@ interface Props {
   title: string;
   summary: string;
   children?: ReactNode;
-  focusArea?: string;
+  focus?: string;
 }
 
-function Spotlight({ title, summary, children, focusArea }: Props) {
+function Spotlight({ title, summary, children, focus }: Props) {
   return (
     <div className="border-l-2 border-amber-200 pl-4 md:pl-6 space-y-3">
       <div>
@@ -17,15 +17,12 @@ function Spotlight({ title, summary, children, focusArea }: Props) {
       </div>
       {children && (
         <>
-          <h4 className="text-md font-black text-gray-900 mb-2">
-            Achievements:
-          </h4>
           <div className="flex flex-col pt-2">{children}</div>{" "}
         </>
       )}
-      {focusArea && (
+      {focus && (
         <p className="text-xs text-slate-400 font-semibold tracking-wider uppercase">
-          Focus Area: {focusArea}
+          Focus: {focus}
         </p>
       )}
     </div>
