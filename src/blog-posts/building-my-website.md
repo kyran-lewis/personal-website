@@ -38,10 +38,43 @@ Standardised component styles
 
 ### Markdown for blog posts
 
-Syntax highlighting
-Universal standard
-Frontmatter
-React markdown
+Using markdown for create blog posts makes it far easier and scalable than using raw HTML. It means the blog posts are in a clear human readable format.
+
+It also includes syntax highlighting which help you visualise the different formatting which is available in markdown e.g. headers of varying sizes, bullet lists, etc.
+
+Markdown is a universal and widely used format for writing blogs especially in tech. Used by websites like: hashnode, dev.to and medium.
+
+#### Frontmatter
+
+Frontmatter was used to split the markdown into content and metadata. You can gather the things like the date, a summary of the post and the id from the metadata written at the front of the file.
+
+Example:
+
+```
+id: "1"
+title: "Building My Personal Website"
+summary: ""
+date: "17 May 2026"
+category: "Frontend"
+```
+
+This was useful for creating the blog cards which give an overview of what each post is about. Also, having attributes like category and date mean the posts can be sorted and filtered by the user.
+
+#### React Markdown
+
+React markdown, this actually separates the content into the corresponding HTML tags. It takes the markdown syntax and converts it into HTML e.g. ### -> h3. You can add specific styles to the different elements which adds another layer of customisation which is incredibly useful.
+
+Examples:
+
+```
+pre: ({ children }) => (
+    <pre className="bg-gray-100 text-gray-800 rounded-lg p-4">
+        {children}
+    </pre>
+),
+```
+
+This creates a grey box with padding around code blocks making them standout from the rest of the text.
 
 ### Hosting
 

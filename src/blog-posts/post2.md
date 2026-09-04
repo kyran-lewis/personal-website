@@ -2,7 +2,7 @@
 id: "3"
 title: "Do Do Do"
 summary: "Moving from full-time QA into Full-Stack engineering taught me that a test-driven mindset isn't slower—it's your ultimate deployment superpower."
-date: "13/05/2026"
+date: "30 May 2026"
 category: "Frontend"
 ---
 

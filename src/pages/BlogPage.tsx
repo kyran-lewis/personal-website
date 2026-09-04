@@ -1,26 +1,22 @@
 import { useState } from "react";
-import { PARSED_BLOG_POSTS } from "../BLOG_POSTS";
+import { PARSED_BLOG_POSTS, type BlogPostData } from "../BLOG_POSTS";
 import BlogPostCard from "../components/BlogPostCard";
 import CategoryFilter from "../components/CategoryFilter";
+import dayjs from "dayjs";
 function BlogPage() {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  // const parsedBlogPosts = BLOG_POSTS_NEW.map((rawPost) => {
-  //   const { attributes, body } = fm<BlogPostData>(rawPost);
-  //   return {
-  //     title: attributes.title,
-  //     date: attributes.date,
-  //     summary: attributes.summary,
-  //     category: attributes.category,
-  //     id: attributes.id,
-  //     content: body,
-  //   };
-  // });
+  // TODO: order by ascending or descending by switching order
+  // b - a desc
+  // a - b asc
+  const byDate = (a: BlogPostData, b: BlogPostData) => {
+    return dayjs(b.date).valueOf() - dayjs(a.date).valueOf();
+  };
 
   // Filter posts based on click state
   const filteredPosts = PARSED_BLOG_POSTS.filter((post) =>
     activeFilter === "All" ? true : post.category === activeFilter,
-  );
+  ).sort(byDate);
 
   console.log(filteredPosts);
 

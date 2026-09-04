@@ -92,6 +92,12 @@ function ViewBlogPostPage() {
                   {children}
                 </a>
               ),
+
+              pre: ({ children }) => (
+                <pre className="bg-gray-100 text-gray-800 rounded-lg p-4">
+                  {children}
+                </pre>
+              ),
             }}
           />
         </div>
